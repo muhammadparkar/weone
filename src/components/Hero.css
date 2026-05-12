@@ -66,26 +66,6 @@
   max-width: 900px;
 }
 
-.hero__badge-wrapper {
-  margin-bottom: var(--space-4);
-  overflow: hidden;
-}
-
-.hero__badge {
-  display: inline-block;
-  padding: var(--space-2) var(--space-4);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
-  color: white;
-  font-family: var(--font-body);
-  font-size: var(--text-small);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-}
 
 .hero__title {
   font-family: var(--font-heading);

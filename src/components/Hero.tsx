@@ -101,9 +101,6 @@ export default function Hero() {
 
       <div className="hero__content container">
         <div className="hero__text fade-in visible">
-          <div className="hero__badge-wrapper">
-            <span className="hero__badge">Premium Properties</span>
-          </div>
           <h1 className="hero__title">{slide.title}</h1>
           <p className="hero__subtitle">{slide.subtitle}</p>
           
