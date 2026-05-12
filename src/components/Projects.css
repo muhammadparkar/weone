@@ -1,0 +1,212 @@
+.projects {
+  background-color: var(--color-surface);
+}
+
+.projects__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-12);
+  gap: var(--space-8);
+}
+
+@media (max-width: 767px) {
+  .projects__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.projects__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.projects__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.projects__filters {
+  display: flex;
+  gap: var(--space-2);
+  background: white;
+  padding: var(--space-1);
+  border-radius: 100px;
+  box-shadow: var(--shadow-sm);
+}
+
+.projects__filter {
+  padding: var(--space-2) var(--space-6);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: all var(--transition-base);
+}
+
+.projects__filter:hover {
+  color: var(--color-accent);
+}
+
+.projects__filter--active {
+  background: var(--color-accent);
+  color: white !important;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: var(--space-8);
+}
+
+@media (max-width: 480px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Property Card */
+.property-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-border);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.property-card__image-wrapper {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.property-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.property-card:hover .property-card__image {
+  transform: scale(1.1);
+}
+
+.property-card__tag {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  padding: var(--space-1) var(--space-4);
+  background: white;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.property-card__wishlist {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(4px);
+}
+
+.property-card__wishlist:hover {
+  background: white;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.property-card__content {
+  padding: var(--space-6);
+}
+
+.property-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-2);
+}
+
+.property-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  color: var(--color-text);
+}
+
+.property-card__price {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.property-card__location {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--text-small);
+  margin-bottom: var(--space-6);
+}
+
+.property-card__details {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--space-4);
+  margin-bottom: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.property-card__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--text-small);
+}
+
+.property-card__detail svg {
+  color: var(--color-accent);
+  opacity: 0.7;
+}
+
+.property-card__btn {
+  width: 100%;
+  padding: var(--space-3);
+  border-color: var(--color-border);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.property-card__btn:hover {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}

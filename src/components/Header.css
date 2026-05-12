@@ -1,0 +1,224 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: all var(--transition-base);
+}
+
+.header--scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-md);
+  height: 80px;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__logo {
+  text-decoration: none;
+}
+
+.header__logo-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: white;
+  transition: color var(--transition-base);
+}
+
+.header--scrolled .header__logo-content {
+  color: var(--color-accent);
+}
+
+.header__logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.header__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.header__logo-accent {
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.header__nav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .header__nav {
+    display: block;
+  }
+}
+
+.header__nav-list {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.header__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.header--scrolled .header__nav-link {
+  color: var(--color-text);
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-base);
+}
+
+.header__nav-link:hover::after {
+  width: 100%;
+}
+
+.header__actions {
+  display: none;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .header__actions {
+    display: flex;
+  }
+}
+
+.header__search-toggle {
+  color: white;
+  transition: color var(--transition-base);
+}
+
+.header--scrolled .header__search-toggle {
+  color: var(--color-text);
+}
+
+.header__search-toggle:hover {
+  color: var(--color-accent);
+}
+
+.header__cta {
+  padding: 0.6rem 1.5rem;
+  font-size: var(--text-small);
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.2);
+}
+
+.header--scrolled .header__cta {
+  padding: 0.5rem 1.25rem;
+}
+
+/* Mobile Menu Toggle */
+.header__mobile-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+@media (min-width: 1024px) {
+  .header__mobile-toggle {
+    display: none;
+  }
+}
+
+.header__mobile-bar {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all var(--transition-base);
+  border-radius: 2px;
+}
+
+.header--scrolled .header__mobile-bar {
+  background-color: var(--color-text);
+}
+
+.header__mobile-toggle--open .header__mobile-bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.header__mobile-toggle--open .header__mobile-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header__mobile-toggle--open .header__mobile-bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.header__mobile-menu {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-surface);
+  z-index: 1000;
+  padding: 120px var(--space-6) var(--space-12);
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.header__mobile-menu--open {
+  transform: translateX(0);
+}
+
+.header__mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.header__mobile-nav-link {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header__mobile-cta-wrapper {
+  margin-top: var(--space-12);
+}
+
+.header__mobile-cta-wrapper .btn {
+  width: 100%;
+  padding: var(--space-4);
+  font-size: var(--text-body);
+}
